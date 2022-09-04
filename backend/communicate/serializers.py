@@ -5,15 +5,14 @@ class CommentSerializer(serializers.ModelSerializer):
     user_id = serializers.ReadOnlyField()
     class Meta:
         model = Comment
-        fields = ['Commentid', 'commnetInfo', 'user_id', 'created_at', 'comment']
+        fields = ['id', 'commnetInfo', 'user_id', 'created_at', 'comment',"subject_id"]
 
 class CommentCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ("Commentid", "commnetInfo", "comment", "user_id")
+        fields = ("id", "commnetInfo", "comment", "user_id","subject_id")
 
 class CommentDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['Commentid', 'commnetInfo', 'user_id', 'created_at', 'comment', 'likes', 'dislike']
-
+        fields = ['id', 'commnetInfo', 'user_id', 'created_at', 'comment', 'likes', 'dislike',"subject_id"]
