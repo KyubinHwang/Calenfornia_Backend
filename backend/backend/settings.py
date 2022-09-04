@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "info",
     "subjects",
     "usersubject",
+    "communicate",
 ]
 
 MIDDLEWARE = [

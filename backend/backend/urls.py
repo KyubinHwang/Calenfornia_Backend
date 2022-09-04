@@ -10,7 +10,8 @@ urlpatterns = [
     path('', include('todo.urls')),
     path('',include('info.urls')),
     path('',include('subjects.urls')),
-    path('',include('usersubject.urls'))
+    path('',include('usersubject.urls')),
+    path('',include('communicate.urls')),
     #path('users/', include('users.urls')),
     #path('', include('posts.urls')),
 ]
