@@ -30,14 +30,14 @@ class CommentsAPIView(APIView):
 class CommentAPIView(APIView):
     #상세 조회
     def get(self, request, pk,fk):
-        comments = Comment.objects.filter(info_id=fk) # info 로 필터링
+        comments = Comment.objects.filter(commnetInfo=fk) # info 로 필터링
         comment = get_object_or_404(comments, id = pk)
         serializer = CommentDetailSerializer(comment) 
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     # 수정
     def patch(self, request, pk,fk):
-        comments = Comment.objects.filter(info_id=fk)
+        comments = Comment.objects.filter(commnetInfo=fk)
         comment = get_object_or_404(comments, id = pk)
         serializer = CommentCreateSerializer(comment, data=request.data)
         if serializer.is_valid():
@@ -47,7 +47,7 @@ class CommentAPIView(APIView):
     
     # 삭제
     def delete(self, request, pk,fk):
-        comments = Comment.objects.filter(info_id = fk)
+        comments = Comment.objects.filter(commnetInfo = fk)
         comment = get_object_or_404(comments, id=pk)
         comment.delete()
         return Response({"message":"삭제되었습니다."})
