@@ -1,8 +1,13 @@
 from datetime import timedelta
 import os,sys
+from pickle import FALSE
 from pathlib import Path
 import json
 from django.core.exceptions import ImproperlyConfigured
+import my_settings
+
+DATABASES = my_settings.DATABASES
+SECRET_KEY = my_settings.SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,10 +20,10 @@ SECRET_DEBUG_FILE = os.path.join(ROOT_DIR, 'backend/.config_secret/settings_debu
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b(pw&x$*$%s-gvkhz0^xq%az^7b*y^90l-@n(a+rya0*vpj9g$'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = FALSE
 
 ALLOWED_HOSTS = ['*']
 
@@ -85,13 +90,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
 
-}
+
 
 # import my_settings
 # DATABASES = my_settings.DATABASES

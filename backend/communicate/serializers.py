@@ -2,7 +2,6 @@ from .models import Comment
 from rest_framework import serializers
 
 class CommentSerializer(serializers.ModelSerializer):
-    user_id = serializers.ReadOnlyField()
     class Meta:
         model = Comment
         fields = ['id', 'commnetInfo', 'user_id', 'created_at', 'comment',"subject_id"]
@@ -15,4 +14,4 @@ class CommentCreateSerializer(serializers.ModelSerializer):
 class CommentDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
-        fields = ['id', 'commnetInfo', 'user_id', 'created_at', 'comment', 'likes', 'dislike',"subject_id"]
+        fields = ['id', 'commnetInfo', 'user_id', 'created_at', 'comment',"subject_id"]
