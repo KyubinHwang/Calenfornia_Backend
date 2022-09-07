@@ -8,9 +8,7 @@ class Comment(models.Model):
     commnetInfo = models.ForeignKey(Info, null=False, blank=False, on_delete=models.CASCADE) #일정에 대한 fk를 받기
     user_id = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE) #야자수 1, 2, 3 처럼 user_id
     created_at = models.DateField(auto_now_add=True, null=False, blank=False) # 생성일자
-    comment = models.TextField() # 댓글
-    likes = models.ManyToManyField(User, related_name='like_comment', blank=True)
-    dislikes = models.ManyToManyField(User, related_name='dislike_comment', blank=True)
+    comment = models.TextField()
     subject_id = models.ForeignKey(Subject,related_name = 'subject_comment',on_delete=models.CASCADE)
 
     def __str__(self):
