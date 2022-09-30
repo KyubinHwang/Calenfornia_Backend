@@ -140,8 +140,8 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://localhost:8000',
     'http://localhost:8080',
-    'http://3.35.11.74:3000/',  #frontend
-    'http://43.201.34.118/'     #backend
+    'http://43.201.34.118:3306',
+    'http://3.35.11.74',
 )
 
 REST_FRAMEWORK = {
